@@ -24,7 +24,7 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # update with the image you build in part 1
-          image: 'quay.io/thynder/thynder:<Tag>'
+          image: 'quay.io/thynder/thynder:v1'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
