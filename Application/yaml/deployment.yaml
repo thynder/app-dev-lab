@@ -22,7 +22,7 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
 # update with the image you build in part 1
           image: 'quay.io/thynder/thynder:v2'
       restartPolicy: Always
