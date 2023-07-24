@@ -1,18 +1,15 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-# set your lab user name
   name: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
-    matchLabels: {{ .Release.Name }}
-# set your lab user name
-      app: thynder-hello-world
+    matchLabels:
+      app: {{ .Release.Name }}
   template:
     metadata:
-      labels: 
-# set your lab user name
+      labels:
         app: {{ .Release.Name }}
     spec:
       containers:
@@ -23,7 +20,7 @@ spec:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
           imagePullPolicy: Always
-# update with the image you build in part 1
+          terminationMessagePolicy: File
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
