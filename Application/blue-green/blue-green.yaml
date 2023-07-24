@@ -13,4 +13,4 @@ spec:
   alternateBackends:
   - kind: Service
     name: user2-hello-world
-    weight: 100
+    weight: 1000
