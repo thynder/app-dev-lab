@@ -9,8 +9,8 @@ spec:
   to:
     kind: Service
     name: user2-hello-chart-service
-    weight: 100
+    weight: 0
   alternateBackends:
   - kind: Service
     name: thynder-hello-world
-    weight: 0
+    weight: 100
