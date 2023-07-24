@@ -5,4 +5,5 @@ containers:
   image: 'quay.io/thynder/thynder'
   tag: 'chart_v1'
 
-  #fddf
+service:
+  servicePort: 8080
