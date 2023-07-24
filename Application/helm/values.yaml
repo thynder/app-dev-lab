@@ -2,8 +2,5 @@ ReplicaNumber: 3
 
 containers:
   containerPort: 8080
-  image: 'quay.io/thynder/thynder:v2'
-  tag: 'base'
-
-service:
-  servicePort: 8080
+  image: 'quay.io/thynder/thynder'
+  tag: 'chart_v1'
