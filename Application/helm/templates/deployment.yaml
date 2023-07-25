@@ -32,7 +32,7 @@ spec:
   revisionHistoryLimit: 10
 
   
-  #this will Create Volume From our ConfigMap
+#this will Create Volume From our ConfigMap
 spec:
   template:
     spec:
