@@ -12,7 +12,15 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
+      volumes:
+          - name: index-html
+            configMap:
+              name: index.html
+              defaultMode: 420
       containers:
+        volumeMounts:
+            - name: index-html
+              mountPath: /tmp/html # this will mount the html.index file to it application location
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: {{ .Release.Name }}
@@ -31,18 +39,3 @@ spec:
       maxSurge: 25%
   revisionHistoryLimit: 10
 
-  
-#this will Create Volume From our ConfigMap
-spec:
-  template:
-    spec:
-      volumes:
-        - name: index-html
-          configMap:
-            name: index.html
-            defaultMode: 420
-  # This will mount our File to the Pod File system
-      containers:
-          volumeMounts:
-          - name: index-html
-            mountPath: Application/helm/templates # this will mount the html.index file to it application location
